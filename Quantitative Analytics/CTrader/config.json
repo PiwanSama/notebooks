@@ -1,0 +1,13 @@
+{
+  "Host": "h35.p.ctrader.com",
+  "Port": 5211,
+  "SSL": false,
+  "Username": "3988979",
+  "Password": "SamaTrades123!",
+  "BeginString": "FIX.4.4",
+  "SenderCompID": "demo.ctrader.3988979",
+  "SenderSubID": "QUOTE",
+  "TargetCompID": "cServer",
+  "TargetSubID": "QUOTE",
+  "HeartBeat": "0"
+}
