@@ -6,11 +6,11 @@
 		<style type="text/css">
 			@font-face {
 				font-family: 'Poppins';
-				src: url('fonts/poppins.ttf') format('ttf');
+				src: url('fonts/poppins.ttf') format('truetype');
 				font-weight: normal;
 				font-style: normal;
 			}
-	
+
 			body {
 				font-family: 'Poppins', sans-serif;
 				background-color: #f0f0f0;
@@ -19,12 +19,20 @@
 			}
 	
 			h2 {
-				color: #333;
+				color: #fff;
 			}
 	
 			p {
-				text-align: justify;
+				color: #fff;
+			}
+
+			p.form-p{
 				color: #333;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 10px;
 			}
 	
 			.introdiv {
@@ -63,6 +71,15 @@
 				border: 1px solid #ccc;
 				border-radius: 4px;
 			}
+
+			input[type="number"] {
+				width: 100%;
+				padding: 8px;
+				margin-bottom: 10px;
+				box-sizing: border-box;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
 	
 			input[type="submit"] {
 				background-color: #3498db;
@@ -87,93 +104,32 @@
 
 			<div class="formdiv">
 				<h3>Enter customer activity and details below</h3>
-				<form method="post" action="/predict" enctype="multipart/form-data">
-					<p>
-						<label for="CUST_ID">CUST_ID</label>
-						<input type="text" name="CUST_ID" required>
-					</p>
-					<p>
-						<label for="BALANCE">BALANCE</label>
-						<input type="text" name="BALANCE" required>
-					</p>
-			
-					<p>
-						<label for="BALANCE_FREQUENCY">BALANCE_FREQUENCY</label>
-						<input type="text" name="BALANCE_FREQUENCY" required>
-					</p>
-			
-					<p>
-						<label for="PURCHASES">PURCHASES</label>
-						<input type="text" name="PURCHASES" required>
-					</p>
-			
-					<p>
-						<label for="ONEOFF_PURCHASES">ONEOFF_PURCHASES</label>
-						<input type="text" name="ONEOFF_PURCHASES" required>
-					</p>
-					<p>
-						<label for="INSTALLMENTS_PURCHASES">INSTALLMENTS_PURCHASES</label>
-						<input type="text" name="INSTALLMENTS_PURCHASES" required>
-					</p>
-			
-					<p>
-						<label for="CASH_ADVANCE">CASH_ADVANCE</label>
-						<input type="text" name="CASH_ADVANCE" required>
-					</p>
-			
-					<p>
-						<label for="PURCHASES_FREQUENCY">PURCHASES_FREQUENCY</label>
+				<form method="post" action="/predict" enctype="multipart/form-data">	
+					<p class="form-p">
+						<label for="PURCHASES_FREQUENCY">Purchase Frequency (score between 0 and 1 
+							where 1 = frequently purchased, 0 = not frequently purchased):</label>
 						<input type="text" name="PURCHASES_FREQUENCY" required>
 					</p>
 			
-					<p>
-						<label for="ONEOFF_PURCHASES_FREQUENCY">ONEOFF_PURCHASES_FREQUENCY</label>
-						<input type="text" name="ONEOFF_PURCHASES_FREQUENCY" required>
+					<p class="form-p">
+						<label for="PURCHASES_TRX">Number of purchases made:</label><br>
+						<input type="number" min="0" name="PURCHASES_TRX" required>
 					</p>
 			
-					<p>
-						<label for="PURCHASES_INSTALLMENTS_FREQUENCY">PURCHASES_INSTALLMENTS_FREQUENCY</label>
+					<p class="form-p">
+						<label for="PURCHASES_INSTALLMENTS_FREQUENCY"> How frequently purchases in installments 
+							(score between 0 and 1 where 1 = frequently purchased, 0 = not frequently purchased):</label><br>
 						<input type="text" name="PURCHASES_INSTALLMENTS_FREQUENCY" required>
 					</p>
 			
-					<p>
-						<label for="CASH_ADVANCE_FREQUENCY">CASH_ADVANCE_FREQUENCY</label>
-						<input type="text" name="CASH_ADVANCE_FREQUENCY" required>
+					<p class="form-p">
+						<label for="INSTALLMENTS_PURCHASES">Amount of purchase done in installments:</label><br>
+						<input type="number" min="0" name="INSTALLMENTS_PURCHASES" required>
 					</p>
 			
-					<p>
-						<label for="CASH_ADVANCE_TRX">CASH_ADVANCE_TRX</label>
-						<input type="text" name="CASH_ADVANCE_TRX" required>
-					</p>
-			
-					<p>
-						<label for="PURCHASES_TRX">PURCHASES_TRX</label>
-						<input type="text" name="PURCHASES_TRX" required>
-					</p>
-			
-					<p>
-						<label for="CREDIT_LIMIT">CREDIT_LIMIT</label>
-						<input type="text" name="CREDIT_LIMIT" required>
-					</p>
-			
-					<p>
-						<label for="PAYMENTS">PAYMENTS</label>
-						<input type="text" name="PAYMENTS" required>
-					</p>
-			
-					<p>
-						<label for="MINIMUM_PAYMENTS">MINIMUM_PAYMENTS</label>
-						<input type="text" name="MINIMUM_PAYMENTS" required>
-					</p>
-			
-					<p>
-						<label for="PRC_FULL_PAYMENT">PRC_FULL_PAYMENT</label>
-						<input type="text" name="PRC_FULL_PAYMENT" required>
-					</p>
-			
-					<p>
-						<label for="TENURE">TENURE</label>
-						<input type="text" name="TENURE" required>
+					<p class="form-p">
+						<label for="PURCHASES">Amount of purchases made from account:</label><br>
+						<input type="number" min="0" name="PURCHASES" required>
 					</p>
 					
 					<input type="submit" value="Submit">

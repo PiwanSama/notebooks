@@ -2,73 +2,74 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Application for Breast Cancer Recognition</title>
+		<title>Credit Customer Classification</title>
 		<style type="text/css">
-		body {
-		  color: black;
-		}
+			@font-face {
+				font-family: 'Poppins';
+				src: url('fonts/poppins.ttf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
 
-		h2 {
-		  color: black;
-		}
-		p{
-			color:black;
-			text-align: justify;
-		}
-		.results{
-			color:blue;
-		}
-		.introdiv {
-			margin: auto;
-			height: 160px;
-			width: 60%;
-			background-color: lightblue;
-			text-align: left;
-			padding: 8px;
-		}
-
-		.resultdiv {
-			margin: auto;
-			height: 160px;
-			width: 60%;
-			background-color: ivory;
-			text-align: left;
-			padding: 8px;
-		}
-		.center {
-		  margin: auto;
-		  width: 60%;
-		  height: 85%;
-		  border: 1px dashed blue;
-		  padding: 15px;
-		  background-color: lavender;
-		}
-
+			body {
+				font-family: 'Poppins', sans-serif;
+				background-color: #f0f0f0;
+				color: #333;
+				margin: 0;
+			}
+	
+			h2 {
+				color: #fff;
+			}
+	
+			p {
+				color: #fff;
+			}
+	
+			.introdiv {
+				margin: auto;
+				height: 120px;
+				width: 60%;
+				background-color: #3498db;
+				text-align: left;
+				padding: 8px;
+				color: #fff;
+			}
+	
+			.resultdiv {
+				margin: auto;
+				width: 60%;
+				background-color: #fff;
+				padding: 8px;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+	
+			.center {
+				margin: auto;
+				width: 60%;
+				height: 85%;
+				padding: 15px;
+				background-color: #ecf0f1;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="center">
 			<div class="introdiv">
-				<h2>Breast Cancer Incident Recognition</h2>
-				<p>This is an application that identifies breast cancer incidence based on nine(9) attributes.
-				The use will enter a set of values in the range 1-10. The system displays a diagnosis as either benign or malignant.
-			</p>
+				<h2>Credit Customer Classification</h2>
+				<p>Find out which category a customer belongs to based on their credit card activity</p>
 
 			</div>
 	
 
 			<div class="resultdiv">
-				<!--https://flask.palletsprojects.com/en/2.3.x/patterns/flashing/-->
-				<h2>Display Prediction Results</h2>
-                <p class="results">Type of tumor(directly from variable): <span style="color:{{color_signal}};"> {{prediction}}</span><p></p>
-
-				{% with messages = get_flashed_messages() %}
-					  {% if messages %}
-						<p class="results">Type of tumour(By retrieving from flashed messages): <span style="color:{{ messages[1] }};">{{ messages[0] }}</span><p>
-	
-					  {% endif %}
-					{% endwith %}
-
+				<h3>Predicted Customer Category:</h3>
+				<p class="results">
+					<span style="background-color: {{ color_signal }}; padding:10px; font-weight: 400; color:#333;">{{ prediction }}</span>
+				</p>
+				
 			</div>
 		</div>
 	</body>
