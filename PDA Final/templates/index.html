@@ -2,105 +2,180 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Application for Breast Cancer Recognition</title>
+		<title>Credit Customer Classification</title>
 		<style type="text/css">
-		body {
-		  color: black;
-		}
-
-		h2 {
-		  color: black;
-		}
-		p{
-			color:black;
-			text-align: justify;
-		}
-		.results{
-			color:blue;
-		}
-		.introdiv {
-			margin: auto;
-			height: 160px;
-			width: 60%;
-			background-color: lightblue;
-			text-align: left;
-			padding: 8px;
-		}
-
-		.formdiv {
-			margin: auto;
-			height: 420px;
-			width: 60%;
-			background-color: gray;
-			padding: 8px;
-
-		}
-
-		.center {
-		  margin: auto;
-		  width: 60%;
-		  height: 85%;
-		  border: 1px dashed blue;
-		  padding: 15px;
-		  background-color: lavender;
-		}
-
+			@font-face {
+				font-family: 'Poppins';
+				src: url('fonts/poppins.ttf') format('ttf');
+				font-weight: normal;
+				font-style: normal;
+			}
+	
+			body {
+				font-family: 'Poppins', sans-serif;
+				background-color: #f0f0f0;
+				color: #333;
+				margin: 0;
+			}
+	
+			h2 {
+				color: #333;
+			}
+	
+			p {
+				text-align: justify;
+				color: #333;
+			}
+	
+			.introdiv {
+				margin: auto;
+				height: 120px;
+				width: 60%;
+				background-color: #3498db;
+				text-align: left;
+				padding: 8px;
+				color: #fff;
+			}
+	
+			.formdiv {
+				margin: auto;
+				width: 60%;
+				background-color: #fff;
+				padding: 8px;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+	
+			.center {
+				margin: auto;
+				width: 60%;
+				height: 85%;
+				padding: 15px;
+				background-color: #ecf0f1;
+			}
+	
+			input[type="text"] {
+				width: 100%;
+				padding: 8px;
+				margin-bottom: 10px;
+				box-sizing: border-box;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+	
+			input[type="submit"] {
+				background-color: #3498db;
+				color: #fff;
+				padding: 10px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+	
+			input[type="submit"]:hover {
+				background-color: #2980b9;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="center">
 			<div class="introdiv">
-				<h2>Breast Cancer Incident Recognition</h2>
-				<p>This is an application that identifies breast cancer incidence based on nine(9) attributes.
-				The use will enter a set of values in the range 1-10. The system displays a diagnosis as either benign or malignant.
-			</p>
-
+				<h2>Credit Customer Classification</h2>
+				<p>Find out which category a customer belongs to based on their credit card activity</p>
 			</div>
-	
-			<!--
-			1. Clump Thickness:               1 - 10
-            2. Uniformity of Cell Size:       1 - 10
-            3. Uniformity of Cell Shape:      1 - 10
-            4. Marginal Adhesion:             1 - 10
-            5. Single Epithelial Cell Size:   1 - 10
-            6. Bare Nuclei:                   1 - 10
-            7. Bland Chromatin:               1 - 10
-            8. Normal Nucleoli:               1 - 10
-            9. Mitoses:                       1 - 10
-            
 
-			-->
 			<div class="formdiv">
-				<h2>Provide values</h2>
+				<h3>Enter customer activity and details below</h3>
 				<form method="post" action="/predict" enctype="multipart/form-data">
-					<p>  <label for="">Clump Thickness:               1 - 10</label>
-						<input type="text" name="Clump_thickness"  required>
-					</p>
-					<p>  <label for="">Uniformity of Cell Size:       1 - 10</label>
-            			<input type="text" name="Uniformity_of_cell_size"  required>
-            		</p>
-					<p>  <label for="">Uniformity of Cell Shape:      1 - 10</label>
-						<input type="text" name="Uniformity_of_cell_shape"  required>
-					</p>
-					<p>  <label for="">Marginal Adhesion:             1 - 10</label>
-            			<input type="text" name="Marginal_adhesion"  required>
-            		</p>
-					<p>  <label for="">Single Epithelial Cell Size:   1 - 10</label>
-						<input type="text" name="Single_epithelial_cell_size"  required>
-					</p>
-					<p>  <label for="">Bare Nuclei:                   1 - 10</label>
-						<input type="text" name="Bare_nuclei"  required>
-					</p>
-					<p>  <label for="">Bland Chromatin:               1 - 10</label>
-            			<input type="text" name="Bland_chromatin"  required>
-            		</p>
-					<p>  <label for="">Normal Nucleoli:               1 - 10</label>
-						<input type="text" name="Normal_nucleoli"  required>
-					</p>
-					<p>  <label for="">Mitoses:                       1 - 10</label>
-            			<input type="text" name="Mitoses"  required>
-            		</p>	
 					<p>
+						<label for="CUST_ID">CUST_ID</label>
+						<input type="text" name="CUST_ID" required>
+					</p>
+					<p>
+						<label for="BALANCE">BALANCE</label>
+						<input type="text" name="BALANCE" required>
+					</p>
+			
+					<p>
+						<label for="BALANCE_FREQUENCY">BALANCE_FREQUENCY</label>
+						<input type="text" name="BALANCE_FREQUENCY" required>
+					</p>
+			
+					<p>
+						<label for="PURCHASES">PURCHASES</label>
+						<input type="text" name="PURCHASES" required>
+					</p>
+			
+					<p>
+						<label for="ONEOFF_PURCHASES">ONEOFF_PURCHASES</label>
+						<input type="text" name="ONEOFF_PURCHASES" required>
+					</p>
+					<p>
+						<label for="INSTALLMENTS_PURCHASES">INSTALLMENTS_PURCHASES</label>
+						<input type="text" name="INSTALLMENTS_PURCHASES" required>
+					</p>
+			
+					<p>
+						<label for="CASH_ADVANCE">CASH_ADVANCE</label>
+						<input type="text" name="CASH_ADVANCE" required>
+					</p>
+			
+					<p>
+						<label for="PURCHASES_FREQUENCY">PURCHASES_FREQUENCY</label>
+						<input type="text" name="PURCHASES_FREQUENCY" required>
+					</p>
+			
+					<p>
+						<label for="ONEOFF_PURCHASES_FREQUENCY">ONEOFF_PURCHASES_FREQUENCY</label>
+						<input type="text" name="ONEOFF_PURCHASES_FREQUENCY" required>
+					</p>
+			
+					<p>
+						<label for="PURCHASES_INSTALLMENTS_FREQUENCY">PURCHASES_INSTALLMENTS_FREQUENCY</label>
+						<input type="text" name="PURCHASES_INSTALLMENTS_FREQUENCY" required>
+					</p>
+			
+					<p>
+						<label for="CASH_ADVANCE_FREQUENCY">CASH_ADVANCE_FREQUENCY</label>
+						<input type="text" name="CASH_ADVANCE_FREQUENCY" required>
+					</p>
+			
+					<p>
+						<label for="CASH_ADVANCE_TRX">CASH_ADVANCE_TRX</label>
+						<input type="text" name="CASH_ADVANCE_TRX" required>
+					</p>
+			
+					<p>
+						<label for="PURCHASES_TRX">PURCHASES_TRX</label>
+						<input type="text" name="PURCHASES_TRX" required>
+					</p>
+			
+					<p>
+						<label for="CREDIT_LIMIT">CREDIT_LIMIT</label>
+						<input type="text" name="CREDIT_LIMIT" required>
+					</p>
+			
+					<p>
+						<label for="PAYMENTS">PAYMENTS</label>
+						<input type="text" name="PAYMENTS" required>
+					</p>
+			
+					<p>
+						<label for="MINIMUM_PAYMENTS">MINIMUM_PAYMENTS</label>
+						<input type="text" name="MINIMUM_PAYMENTS" required>
+					</p>
+			
+					<p>
+						<label for="PRC_FULL_PAYMENT">PRC_FULL_PAYMENT</label>
+						<input type="text" name="PRC_FULL_PAYMENT" required>
+					</p>
+			
+					<p>
+						<label for="TENURE">TENURE</label>
+						<input type="text" name="TENURE" required>
+					</p>
+					
 					<input type="submit" value="Submit">
 					</p>
 				</form>
