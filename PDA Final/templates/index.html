@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Customer Class Prediction</title>
+		<style type="text/css">
+		body {
+		  color: black;
+		}
+
+		h2 {
+		  color: black;
+		}
+		p{
+			color:black;
+			text-align: justify;
+		}
+		.results{
+			color:blue;
+		}
+		.introdiv {
+			margin: auto;
+			height: 160px;
+			width: 60%;
+			background-color: lightblue;
+			text-align: left;
+			padding: 8px;
+		}
+
+		.formdiv {
+			margin: auto;
+			height: 420px;
+			width: 60%;
+			background-color: gray;
+			padding: 8px;
+
+		}
+
+		.center {
+		  margin: auto;
+		  width: 60%;
+		  height: 85%;
+		  border: 1px dashed blue;
+		  padding: 15px;
+		  background-color: lavender;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<div class="introdiv">
+				<h2>Customer class Prediction</h2>
+				<p>This is an application that identifies breast cancer incidence based on nine(9) attributes.
+				The use will enter a set of values in the range 1-10. The system displays a diagnosis as either benign or malignant.
+			</p>
+
+			</div>
+	
+			<!--
+			1. Clump Thickness:               1 - 10
+            2. Uniformity of Cell Size:       1 - 10
+            3. Uniformity of Cell Shape:      1 - 10
+            4. Marginal Adhesion:             1 - 10
+            5. Single Epithelial Cell Size:   1 - 10
+            6. Bare Nuclei:                   1 - 10
+            7. Bland Chromatin:               1 - 10
+            8. Normal Nucleoli:               1 - 10
+            9. Mitoses:                       1 - 10
+            
+
+			-->
+			<div class="formdiv">
+				<h2>Provide values</h2>
+				<form method="post" action="/predict" enctype="multipart/form-data">
+					<p>  <label for="">Clump Thickness:               1 - 10</label>
+						<input type="text" name="Clump_thickness"  required>
+					</p>
+					<p>  <label for="">Uniformity of Cell Size:       1 - 10</label>
+            			<input type="text" name="Uniformity_of_cell_size"  required>
+            		</p>
+					<p>  <label for="">Uniformity of Cell Shape:      1 - 10</label>
+						<input type="text" name="Uniformity_of_cell_shape"  required>
+					</p>
+					<p>  <label for="">Marginal Adhesion:             1 - 10</label>
+            			<input type="text" name="Marginal_adhesion"  required>
+            		</p>
+					<p>  <label for="">Single Epithelial Cell Size:   1 - 10</label>
+						<input type="text" name="Single_epithelial_cell_size"  required>
+					</p>
+					<p>  <label for="">Bare Nuclei:                   1 - 10</label>
+						<input type="text" name="Bare_nuclei"  required>
+					</p>
+					<p>  <label for="">Bland Chromatin:               1 - 10</label>
+            			<input type="text" name="Bland_chromatin"  required>
+            		</p>
+					<p>  <label for="">Normal Nucleoli:               1 - 10</label>
+						<input type="text" name="Normal_nucleoli"  required>
+					</p>
+					<p>  <label for="">Mitoses:                       1 - 10</label>
+            			<input type="text" name="Mitoses"  required>
+            		</p>	
+					<p>
+					<input type="submit" value="Submit">
+					</p>
+				</form>
+			</div>
+
+		</div>
+	</body>
+</html>
