@@ -64,13 +64,12 @@ body {
 .title-blue{
   color: #0C2B64;
   font-weight: 700;
-}x
+}
 
-.analysis{
-  background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.title-blue-sm{
+  font-size: 14px;
+  color: #444444;
+  font-weight: 700;
 }
 
 footer{
