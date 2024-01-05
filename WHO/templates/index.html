@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -12,34 +13,43 @@
     </style>
     <link href="styles/custom.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
-    
-	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-	<header class="mb-auto">
-		<div>
-		<!--nav class="nav nav-masthead justify-content-center float-md-end">
-			<a class="nav-link active" aria-current="page" href="#">Home</a>
-			<a class="nav-link" href="#">Features</a>
-			<a class="nav-link" href="#">Contact</a>
-		</nav -->
-		</div>
-	</header>
-
-	<main>
+  <body>
+	<div>
 		<div id="cover">
-			<div class="card card-custom">
-				<h1 class="title-bold">Exploring Maternal Mortality Rate</h1>
-			</div>
-			<div class="card card-custom mt-3 p-3">
-				<p class="lead">Maternal mortality rate, often measured as the number of maternal deaths per 100,000 live births, is a critical indicator of the health and well-being of mothers during pregnancy, childbirth, and the postpartum period. Monitoring and addressing maternal mortality are essential components of global efforts to improve maternal health, reduce health disparities, and ensure access to quality healthcare for women worldwide.</p>
+			<div class="cover-container d-flex w-100 h-100 p-3 flex-column">
+				<div class="card card-custom mt-3 p-3">
+					<h1 class="title-bold">Exploring Maternal Mortality Rate</h1>
+				</div>
+				<div class="card card-custom mt-3 p-3">
+					<p class="lead">Maternal mortality rate, often measured as the number of maternal deaths per 100,000 live births, is a critical indicator of the health and well-being of mothers during pregnancy, childbirth, and the postpartum period. Monitoring and addressing maternal mortality are essential components of global efforts to improve maternal health, reduce health disparities, and ensure access to quality healthcare for women worldwide.</p>
+				</div>
 			</div>
 		</div>
-	</main>
+		<div class="p-5">
+			<div id="background" class="my-3">
+				<h3 class="title-blue">Background</h3>
 
-	<footer class="mt-auto text-white-50">
-		
-	</footer>
+			</div>
+
+			<div id="analysis" class="analysis my-3">
+				<h3 class="title-blue">Analysis Results</h3>
+				<iframe  width="100%" height="600" frameborder="0" scrolling="no"
+				src ="../exports/maternal_mortality_gdp.html">
+			</div>
+
+		</div>
+		<footer class="text-white p-5">
+			<h3 class="text-white">References</h3>
+			<ol>
+				<li class="list-group-item">An item</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ol>
+			<p class="lead">Designed and Prepared By Samalie Piwan</p>
+		</footer>
 	</div>
-    
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </body>
 </html>
