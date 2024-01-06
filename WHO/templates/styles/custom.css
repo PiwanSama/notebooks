@@ -66,10 +66,22 @@ body {
   font-weight: 700;
 }
 
-.title-blue-sm{
+.title-grey-sm{
   font-size: 14px;
   color: #444444;
   font-weight: 700;
+}
+
+.title-white-sm{
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-primary-custom{
+  border-radius: 0px;
+  background: #0C2B64;
+  color: #fff;
 }
 
 footer{

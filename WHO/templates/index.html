@@ -34,12 +34,16 @@
 			<div id="analysis" class="my-3">
 				<h3 class="title-blue">Analysis Results</h3>
 
-				<h4 class="title-blue-sm">GDP PPP</h4>
+				<h4 class="title-grey-sm">GDP PPP</h4>
 				<div id="gdp-ppp"></div>
 
-				<h4 class="title-blue-sm">Maternal Mortality Rate</h4>
+				<h4 class="title-grey-sm">Maternal Mortality Rate</h4>
 				<div id="mortality-rate"></div>
-				<!--iframe  width="100%" height="600" frameborder="0" scrolling="no"
+
+				<h4 class="title-grey-sm">Relationship between Maternal Mortality Rate and GDP</h4>
+				<button class="btn btn-primary-custom" onclick="openPlot()">Go to chart</button>
+
+				<!--iframe  width="100%" height="525" frameborder="0" scrolling="no"
 				src ="../exports/maternal_mortality_gdp.html"-->
 			</div>
 
@@ -53,16 +57,20 @@
 				<li class="list-group-item">A fourth item</li>
 				<li class="list-group-item">And a fifth one</li>
 			</ol>
-			<p class="lead">Designed and Prepared By Samalie Piwan</p>
+			<p class="title-white-sm">Designed and Prepared By Samalie Piwan</p>
 		</footer>
 	</div>
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
 	<script>
+		function openPlot() {
+			var fileUrl = '../exports/maternal_mortality_gdp.html';
+			window.open(fileUrl, '_blank');
+		}
+	</script>
+	<script>
 		d3.csv("../data/gdp.csv", function(err, rows){
-
-		console.log(rows)
 
 		function filter_and_unpack(rows, key, Year) {
 		return rows.filter(row => row['Year'] == Year).map(row => row[key])
@@ -187,8 +195,6 @@
 	<script>
 		d3.csv("../data/mortality.csv", function(err, rows){
 
-		console.log(rows)
-
 		function filter_and_unpack(rows, key, Year) {
 		return rows.filter(row => row['Year'] == Year).map(row => row[key])
 		}
@@ -308,5 +314,6 @@
 		});
 		})
 	</script>
+
   </body>
 </html>
