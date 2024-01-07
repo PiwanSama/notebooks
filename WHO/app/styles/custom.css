@@ -14,6 +14,7 @@ body {
   font-family: 'Noto Sans';
   font-weight: normal;
 	font-style: normal;
+  font-size: 1.2rem;
 }
 
 #cover{
@@ -67,7 +68,7 @@ body {
 }
 
 .title-grey-sm{
-  font-size: 14px;
+  font-size: 1.2rem;
   color: #444444;
   font-weight: 700;
 }
@@ -86,4 +87,33 @@ body {
 
 footer{
   background-color: #0C2B64;;
+}
+
+.card{
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+
+.card-grey{
+  border-radius: 0px !important;
+  border: 0px !important;
+  background-color: #f6f7f9 !important;
+}
+
+.emphasis{
+  font-weight: 600;
+  color: #0C2B64;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.px-3 li.ul-li::before {
+  content: '\2022';
+  color: #0C2B64;
+  display: inline-block;
+  width: 2em;
+  margin-left: -1em;
 }
